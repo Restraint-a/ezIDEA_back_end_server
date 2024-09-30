@@ -3,6 +3,8 @@ from pylint.reporters.text import TextReporter
 import re, os
 import json
 
+PROCESS_FOLDER = 'processes'
+
 def parse_pylint_rate(output):
     """
     解析pylint的代码评分部分（Your code has been rated at 0.00/10 (previous run: 0.00/10, +0.00)）
@@ -40,7 +42,7 @@ def parse_pylint_rate(output):
 
 def parse_pylint_output(output):
     """
-    解析pylint的审查信息部分（uploads\test.py:2:0: C0304: Final newline missing (missing-final-newline)）
+    解析pylint的审查信息部分（test.py:2:0: C0304: Final newline missing (missing-final-newline)）
 
     该函数通过正则表达式提取评分数据。
 
@@ -52,7 +54,7 @@ def parse_pylint_output(output):
     """
     results = []
     # 正则表达式
-    pattern = r'uploads\\(\S+\.py):(\d+):(\d+): (\w+): (.+)\s\('
+    pattern = PROCESS_FOLDER+r'\\(\S+\.py):(\d+):(\d+): (\w+): (.+)\s\('
 
     # 将pylint的输出按行分割
     lines = output.split('\n')
