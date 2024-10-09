@@ -2,10 +2,6 @@ import os
 from pylint_process import process_file_out, process_report
 
 # 定义处理文件保存目录
-PROCESS_FOLDER = 'processes'
-# 如果目录不存在，则创建
-if not os.path.exists(PROCESS_FOLDER):
-    os.makedirs(PROCESS_FOLDER)
 
 def allowed_file(filename):
     """
@@ -54,5 +50,5 @@ if __name__ == '__main__':
     file_name = 'test.py'
 
     # 示例文件路径
-    file_name = os.path.join(PROCESS_FOLDER, file_name)
+    #file_name = os.path.join(PROCESS_FOLDER, file_name)
     process(file_name)

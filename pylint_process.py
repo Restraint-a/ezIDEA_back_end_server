@@ -3,7 +3,6 @@ from pylint.reporters.text import TextReporter
 import re, os
 import json
 
-PROCESS_FOLDER = 'processes'
 
 def parse_pylint_rate(output):
     """
@@ -54,7 +53,7 @@ def parse_pylint_output(output):
     """
     results = []
     # 正则表达式
-    pattern = PROCESS_FOLDER+r'\\(\S+\.py):(\d+):(\d+): (\w+): (.+)\s\('
+    pattern = r'(\S+\.py):(\d+):(\d+): (\w+): (.+)\s\('
 
     # 将pylint的输出按行分割
     lines = output.split('\n')

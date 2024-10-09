@@ -1,0 +1,12 @@
+{
+    "错误信息": [
+        {
+            "文件名": "test.py",
+            "出错行": 3,
+            "出错列": 8,
+            "错误码": "E0001",
+            "错误信息": "Parsing failed: 'invalid syntax (test, line 3)'"
+        }
+    ],
+    "评分情况": null
+}
