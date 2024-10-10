@@ -1,2 +1,0 @@
-************* Module test
-test.py:3:8: E0001: Parsing failed: 'invalid syntax (test, line 3)' (syntax-error)

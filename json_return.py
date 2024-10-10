@@ -48,7 +48,6 @@ def process(file_name):
 
 if __name__ == '__main__':
     file_name = 'test.py'
-
     # 示例文件路径
     #file_name = os.path.join(PROCESS_FOLDER, file_name)
     process(file_name)
