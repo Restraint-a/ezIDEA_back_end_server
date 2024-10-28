@@ -40,7 +40,6 @@ class TestPylintFileProcessing(unittest.TestCase):
             data = json.load(f)
             self.assertIn('错误信息', data)
             self.assertIn('评分情况', data)
-            # 可以进一步验证 JSON 内容是否符合预期
 
 if __name__ == '__main__':
     unittest.main()
