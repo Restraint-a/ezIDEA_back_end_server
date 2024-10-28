@@ -63,13 +63,14 @@ def parse_pylint_output(output):
         match = re.match(pattern, line.strip())
         if match:
             filename, line_num, col_num, error_code, message = match.groups()
-            results.append({
-                'file_name': filename,
-                'error_line': int(line_num),
-                'error_col': int(col_num),
-                'error_code': error_code,
-                'error_message': message
-            })
+            if not error_code.startswith('C'):
+                results.append({
+                    'file_name': filename,
+                    'error_line': int(line_num),
+                    'error_col': int(col_num),
+                    'error_code': error_code,
+                    'error_message': message
+                })
 
     return results
 
