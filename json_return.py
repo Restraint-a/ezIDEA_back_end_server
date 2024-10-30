@@ -10,7 +10,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() == 'py'
 
 
-def handle_uploaded_file(file_path):
+def handle_uploaded_file(file_name):
     """
     处理上传的文件，并生成报告
 
@@ -20,9 +20,9 @@ def handle_uploaded_file(file_path):
     返回：
     - result_filename (str): 处理后生成的 JSON 文件的名称
     """
-    if allowed_file(file_path):
-        process_file_out(file_path)
-        result_filename = process_report(file_path)
+    if allowed_file(file_name):
+        process_file_out(file_name)
+        result_filename = process_report(file_name)
         #print(result_filename)
         return result_filename
     else:

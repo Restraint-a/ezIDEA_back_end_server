@@ -1,4 +1,3 @@
-def foo():
-    print("Hello, World!")
 
-mainaa
+if __name__ == __main__:
+    a=1
