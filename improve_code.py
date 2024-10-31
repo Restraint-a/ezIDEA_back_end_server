@@ -72,6 +72,17 @@ def improve(result, improved_name):
 
 
 def improve_code(file_name):
+    """
+    根据给定的文件名生成一个新的结果文件名，该文件名基于原始文件名添加'_result'后缀。
+    这个函数首先会检查结果文件是否存在，如果不存在，则抛出一个文件找不到的异常。
+    如果文件存在，它会读取结果文件的内容，并生成一个改进版本的文件，添加'_improved'后缀。
+
+    参数:
+    file_name (str): 原始文件的名称，用于生成结果和改进文件的名称。
+
+    返回:
+    str: 改进后文件的名称。
+    """
     # 使用给定文件名生成结果文件名
     result_filename = f"{os.path.splitext(file_name)[0]}_result.json"
 
@@ -79,10 +90,18 @@ def improve_code(file_name):
     if not os.path.exists(result_filename):
         raise FileNotFoundError(f"{result_filename} does not exist.")
 
+    # 读取结果文件的内容
     result = read_result(result_filename)
+
+    # 生成改进文件的名称
     improved_name = f"{os.path.splitext(file_name)[0]}_improved.json"
+
+    # 执行改进操作并保存到新的文件中
     improve(result, improved_name)
+
+    # 返回改进文件的名称
     return improved_name
+
 
 
 def main():
