@@ -1,4 +1,3 @@
-
 from pylint_process import parse_pylint_rate, parse_pylint_output
 
 import unittest
